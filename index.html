@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import React, { useRef } from 'react';</p>
+<p class="p1">import { ChevronRight, ArrowUpRight } from 'lucide-react';</p>
+<p class="p2"><br></p>
+<p class="p1">const PortfolioWebsite = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 滚动处理函数</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const scrollToSection = (id) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const element = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (element) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>element.scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 可替换的数据配置</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const stories = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ id: 1, title: "Modernist Spatial Design", category: "Interior", year: "2026" },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ id: 2, title: "Abstract Digital Identity", category: "Branding", year: "2025" },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ id: 3, title: "Eco-Sustainable Pavilion", category: "Architecture", year: "2026" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="bg-[#F8F8F8] text-[#1A1A1A] font-sans selection:bg-black selection:text-white"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 1. Comprehensive - 导航与首屏 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav className="fixed top-0 w-full z-50 mix-blend-difference flex justify-between items-center px-10 py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="text-xl font-bold tracking-tighter cursor-pointer"&gt;STUDIO.A&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="flex gap-12 text-sm font-medium uppercase tracking-widest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onClick={() =&gt; scrollToSection('perspective')} className="hover:opacity-50"&gt;Perspective&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onClick={() =&gt; scrollToSection('stories')} className="hover:opacity-50"&gt;Stories&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onClick={() =&gt; scrollToSection('contact')} className="hover:opacity-50"&gt;Contact&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="hero" className="relative h-screen flex flex-col justify-end p-10 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 className="text-[12vw] font-bold leading-[0.8] tracking-tighter mb-10 z-10"&gt;COMPREHENSIVE&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* 背景视频 - 可在此处替换 URL */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="absolute inset-0 z-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;video<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>autoPlay loop muted playsInline<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>className="w-full h-full object-cover grayscale brightness-90"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>src="https://assets.mixkit.co/videos/preview/mixkit-abstract-motion-of-white-particles-2035-large.mp4"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 2. Perspective - 第二页 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="perspective" className="min-h-screen bg-white flex items-center px-10 py-24"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="aspect-[3/4] bg-gray-100 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&amp;fit=crop&amp;q=80"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>alt="Perspective"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="max-w-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span className="text-xs uppercase tracking-widest text-gray-400 mb-6 block"&gt;02 / Perspective&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-5xl font-light leading-tight mb-8 text-[#1A1A1A]"&gt;Redefining the vision of modern space.&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="text-gray-500 leading-relaxed mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Our perspective is shaped by the intersection of technology and human emotion, creating environments that breathe.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button className="group flex items-center gap-2 border-b border-black pb-2 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Read More &lt;ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 3. Stories - 列表页 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="stories" className="py-32 px-10 bg-[#1A1A1A] text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="flex justify-between items-end mb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 className="text-7xl font-bold tracking-tighter uppercase"&gt;Stories&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="max-w-xs text-gray-400 text-sm italic"&gt;Click the stories to explore detailed project descriptions.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="border-t border-gray-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{stories.map((item) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>key={item.id}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>className="group py-12 border-b border-gray-800 flex justify-between items-center cursor-pointer hover:bg-white hover:text-black transition-all px-4"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>onClick={() =&gt; scrollToSection('project-detail')}<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="text-gray-500 group-hover:text-gray-400 font-mono text-sm tracking-tighter"&gt;0{item.id}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 className="text-4xl font-medium tracking-tight uppercase group-hover:translate-x-4 transition-transform duration-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{item.title}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="hidden md:block text-xs uppercase tracking-widest opacity-60"&gt;{item.category}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ArrowUpRight className="w-8 h-8 opacity-20 group-hover:opacity-100 transition-opacity" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 4. Project Detail &amp; Awards - 对接第二张图 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section id="project-detail" className="py-24 px-10 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid grid-cols-1 md:grid-cols-3 gap-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-10"&gt;Project Description&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="text-3xl leading-snug font-light text-gray-800 italic"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>"This project explores the symbiotic relationship between light and shadow, utilizing raw materials to evoke a sense of permanence in a digital age."</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="space-y-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 className="text-xs uppercase font-bold mb-4 tracking-widest"&gt;Awards&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* 这里植入奖项图片 */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="grid grid-cols-2 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="h-16 bg-gray-50 flex items-center justify-center p-2 grayscale opacity-60 hover:opacity-100 cursor-pointer border border-gray-100 italic font-serif"&gt;A'Design&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="h-16 bg-gray-50 flex items-center justify-center p-2 grayscale opacity-60 hover:opacity-100 cursor-pointer border border-gray-100 italic font-serif"&gt;RedDot&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h4 className="text-xs uppercase font-bold mb-4 tracking-widest"&gt;Partners&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex flex-wrap gap-6 grayscale opacity-40"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="px-4 py-1 border border-black text-[10px] font-bold"&gt;VOGUE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="px-4 py-1 border border-black text-[10px] font-bold"&gt;TESLA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 5. Our Team - 底部图片切换区 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;section className="py-24 px-10 bg-[#F8F8F8]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 className="text-xs uppercase tracking-widest text-center mb-16 text-gray-400"&gt;Our Team&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="grid grid-cols-2 md:grid-cols-4 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>{[1, 2, 3, 4].map((i) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div key={i} className="group relative aspect-[4/5] bg-gray-200 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;img<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>src={`https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;q=80&amp;w=400&amp;index=${i}`}<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>alt="Team Member"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p className="text-white text-xs font-medium uppercase tracking-widest"&gt;Design Lead&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* 6. Contact - 底部 */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;footer id="contact" className="bg-black text-white py-24 px-10 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 className="text-[10vw] font-bold tracking-tighter mb-12 opacity-20"&gt;CONTACT.&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p className="text-xl mb-12 text-gray-400"&gt;Ready to start your next project?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="mailto:hello@studioa.com" className="text-3xl border-b-2 border-white pb-2 hover:opacity-70 transition-opacity"&gt;hello@studioa.com&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="mt-32 pt-10 border-t border-gray-900 flex justify-between text-[10px] text-gray-600 tracking-[0.2em] uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;© 2026 Studio A. All rights reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Privacy Policy / Terms of Service&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">export default PortfolioWebsite;</p>
+</body>
+</html>
